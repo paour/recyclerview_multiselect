@@ -1,12 +1,13 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.app.DialogFragment;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.fragment.app.DialogFragment;
 
 public class ImageFragment extends DialogFragment {
     public static final String EXTRA_IMAGE_PATH = "path";

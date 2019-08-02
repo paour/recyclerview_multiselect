@@ -1,7 +1,8 @@
 package com.bignerdranch.android.multiselector;
 
-import android.support.v7.view.ActionMode;
 import android.view.Menu;
+
+import androidx.appcompat.view.ActionMode;
 
 /**
  * <p>Abstract superclass for creating action mode callbacks that automatically toggle

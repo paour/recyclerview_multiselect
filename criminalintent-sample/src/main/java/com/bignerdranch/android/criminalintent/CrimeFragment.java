@@ -2,7 +2,6 @@ package com.bignerdranch.android.criminalintent;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,7 +9,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
@@ -25,6 +23,9 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.core.app.NavUtils;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.Date;
 import java.util.UUID;
@@ -105,7 +106,7 @@ public class CrimeFragment extends BaseFragment {
         mDateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentManager fm = getActivity()
-                        .getFragmentManager();
+                        .getSupportFragmentManager();
                 DatePickerFragment dialog = DatePickerFragment
                         .newInstance(mCrime.getDate());
                 dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
@@ -137,7 +138,7 @@ public class CrimeFragment extends BaseFragment {
                     return;
 
                 FragmentManager fm = getActivity()
-                        .getFragmentManager();
+                        .getSupportFragmentManager();
                 String path = getActivity()
                         .getFileStreamPath(p.getFilename()).getAbsolutePath();
                 ImageFragment.createInstance(path)

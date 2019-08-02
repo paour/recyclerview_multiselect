@@ -1,9 +1,11 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.fragment.app.Fragment;
 
 public class CrimeCameraActivity extends SingleFragmentActivity {
     @Override

@@ -1,7 +1,8 @@
 package com.bignerdranch.android.multiselector;
 
-import android.support.v7.widget.RebindReportingHolder;
 import android.view.View;
+
+import androidx.recyclerview.widget.RebindReportingHolder;
 
 /**
  * <p>A {@link android.support.v7.widget.RecyclerView.ViewHolder} that will automatically

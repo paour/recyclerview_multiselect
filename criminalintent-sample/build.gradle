@@ -1,26 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.bignerdranch.android.criminalintent"
-        minSdkVersion 15
-        targetSdkVersion 21
+        minSdkVersion 16
+        targetSdkVersion 28
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'com.android.support:support-v13:22.2.0'
+    implementation "androidx.appcompat:appcompat:1.0.2"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
     compile project(':recyclerview-multiselect')
 }

@@ -2,14 +2,15 @@ package com.bignerdranch.android.criminalintent;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -44,7 +45,7 @@ public class CrimePagerActivity extends AppCompatActivity {
 
         final ArrayList<Crime> crimes = CrimeLab.get(this).getCrimes();
 
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fm) {
             @Override
             public int getCount() {
@@ -52,8 +53,8 @@ public class CrimePagerActivity extends AppCompatActivity {
             }
 
             @Override
-            public Fragment getItem(int pos) {
-                UUID crimeId = crimes.get(pos).getId();
+            public Fragment getItem(int position) {
+                UUID crimeId = crimes.get(position).getId();
                 return CrimeFragment.newInstance(crimeId);
             }
         });

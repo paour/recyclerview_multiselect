@@ -1,6 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import java.util.UUID;
 

@@ -1,16 +1,16 @@
-package android.support.v7.widget;
+package androidx.recyclerview.widget;
 
 import android.view.View;
 
 /**
  * ViewHolder with a callback for when it is rebound.
- *
+ * <p>
  * This lives in {@link android.support.v7.widget} so that it can override
  * {@link #setFlags(int, int)}, {@link #offsetPosition(int, boolean)}, and
  * {@link #addFlags(int)}, all of which are package private. This is currently
  * the only way to automatically detect when a ViewHolder has been rebound
  * to a new item.
- *
+ * <p>
  * If you intend to subclass for the purpose of interfacing with
  * a {@link com.bignerdranch.android.multiselector.MultiSelector},
  * use {@link com.bignerdranch.android.multiselector.MultiSelectorBindingHolder}
@@ -48,11 +48,12 @@ public abstract class RebindReportingHolder extends RecyclerView.ViewHolder {
 
     /**
      * check if the view is due for rebiding
+     *
      * @param flag
      * @return
      */
     private static boolean isRelevantFlagSet(int flag) {
-        for (Integer value : new int[] { FLAG_BOUND, FLAG_CHANGED, FLAG_UPDATE, FLAG_RETURNED_FROM_SCRAP }) {
+        for (Integer value : new int[]{FLAG_BOUND, FLAG_UPDATE, FLAG_RETURNED_FROM_SCRAP}) {
             if ((flag & value) == value) {
                 return true;
             }
@@ -65,5 +66,9 @@ public abstract class RebindReportingHolder extends RecyclerView.ViewHolder {
     void offsetPosition(int offset, boolean applyToPreLayout) {
         super.offsetPosition(offset, applyToPreLayout);
         onRebind();
+    }
+
+    public String whoAmI() {
+        return "I'm the good one";
     }
 }
