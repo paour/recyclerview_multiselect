@@ -1,17 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
-        compileSdkVersion 28
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+	  compileSdkVersion rootProject.ext.compileSdkVersion
+		buildTypes {
+			debug {}
+			release {}
+			preview {}
+		}
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
